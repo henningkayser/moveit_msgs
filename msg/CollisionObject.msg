@@ -9,7 +9,7 @@ geometry_msgs/Pose pose
 string id
 
 # The object type in a database of known objects
-object_recognition_msgs/ObjectType type
+moveit_msgs/ObjectType type
 
 # The collision geometries associated with the object.
 # Their poses are with respect to the object's pose

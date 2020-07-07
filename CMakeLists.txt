@@ -19,7 +19,6 @@ find_package(std_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(shape_msgs REQUIRED)
-find_package(object_recognition_msgs REQUIRED)
 find_package(octomap_msgs REQUIRED)
 find_package(trajectory_msgs REQUIRED)
 
@@ -71,6 +70,12 @@ set(msg_files
   "msg/WorkspaceParameters.msg"
   "msg/KinematicSolverInfo.msg"
   "msg/PositionIKRequest.msg"
+  "msg/ObjectInformation.msg"
+  "msg/ObjectType.msg"
+  "msg/RecognizedObject.msg"
+  "msg/RecognizedObjectArray.msg"
+  "msg/Table.msg"
+  "msg/TableArray.msg"
 )
 
 set(srv_files
@@ -98,6 +103,7 @@ set(srv_files
   "srv/DeleteRobotStateFromWarehouse.srv"
   "srv/ChangeControlDimensions.srv"
   "srv/ChangeDriftDimensions.srv"
+  "srv/GetObjectInformation.srv"
 )
 
 set(action_files
@@ -106,6 +112,7 @@ set(action_files
   "action/MoveGroupSequence.action"
   "action/Pickup.action"
   "action/Place.action"
+  "action/ObjectRecognition.action"
 )
 
 rosidl_generate_interfaces(${PROJECT_NAME}
@@ -119,7 +126,6 @@ rosidl_generate_interfaces(${PROJECT_NAME}
     geometry_msgs
     sensor_msgs
     shape_msgs
-    object_recognition_msgs
     octomap_msgs
     trajectory_msgs
 )
